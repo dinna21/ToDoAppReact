@@ -16,6 +16,18 @@ export default function App() {
     })
     setNewItem("")
   }
+  function toggleToDo(id,completed){
+      setTodos(currentTodos => {
+        return currentTodos.map(todo => {
+          if(todo.id == id){
+            todo.completed = completed
+            return { ...todo,completed }
+          }
+          return todo
+        })
+      })
+  }
+  
   // console.log(todos)
   return (
     <>
